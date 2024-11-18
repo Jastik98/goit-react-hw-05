@@ -1,0 +1,34 @@
+.list {
+  display: flex;
+}
+.link {
+  padding: 10px 30px;
+  transition: background-color 0.3s ease;
+  border: 1px solid gray;
+  border-radius: 20px;
+  margin-right: 10px;
+}
+
+.link:hover {
+  background-color: rgb(243, 230, 206);
+}
+
+.link.active {
+  color: orange;
+}
+
+.backLink {
+  width: fit-content;
+  padding: 10px 30px;
+  margin-bottom: 20px;
+  display: flex;
+  border-radius: 20px;
+  border: 1px solid gray;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.backLink:hover {
+  background-color: darkgray;
+}
