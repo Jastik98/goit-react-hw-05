@@ -4,7 +4,7 @@ import MovieList from "../../components/MovieList/MovieList";
 import { fetchMovies } from "../../servise api/api";
 
 import Loader from "../../components/Loader/Loader";
-import Section from "../../components/Section/section";
+import Section from "../../components/Section/Section";
 import Container from "../../components/Container/Container";
 
 const HomePage = () => {

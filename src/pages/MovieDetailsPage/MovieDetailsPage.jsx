@@ -14,7 +14,7 @@ import {
 import { IoChevronBackCircleOutline } from "react-icons/io5";
 import { IconContext } from "react-icons";
 
-import Section from "../../components/Section/section";
+import Section from "../../components/Section/Section";
 import Container from "../../components/Container/Container";
 import Loader from "../../components/Loader/Loader";
 import MovieDetails from "../../components/MovieDetails/MovieDetails";

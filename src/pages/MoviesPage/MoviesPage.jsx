@@ -7,7 +7,7 @@ import MovieList from "../../components/MovieList/MovieList";
 import NotFoundPage from "../NotFoundPage/NotFoundPage";
 
 import Form from "../../components/Form/Form";
-import Section from "../../components/Section/section";
+import Section from "../../components/Section/Section";
 import Container from "../../components/Container/Container";
 
 const MoviesPage = () => {
