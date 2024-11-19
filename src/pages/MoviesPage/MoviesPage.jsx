@@ -1,9 +1,52 @@
-import React from 'react'
+import { Formik } from "formik";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
+
+import Loader from "../../components/Loader/Loader";
+import MovieList from "../../components/MovieList/MovieList";
+import NotFoundPage from "../NotFoundPage/NotFoundPage";
+import { getMovie, getMovies } from "../../servise api/api";
+import Form from "../../components/Form/Form";
 
 const MoviesPage = () => {
-  return (
-    <div>MoviesPage</div>
-  )
-}
+  const [movies, setMovies] = useState(null);
+  const [error, setError] = useState(null);
+  const [loader, setLoader] = useState(false);
 
-export default MoviesPage
+  const [searchParams, setSearchParams] = useSearchParams();
+  const query = searchParams.get("query");
+
+  useEffect(() => {
+    if (!query) return;
+
+    const getData = async () => {
+      setLoader(true);
+      setMovies(null);
+      try {
+        setError(null);
+        const { data } = await getMovies(query);
+        setMovies(data.results);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoader(false);
+      }
+    };
+    getData();
+  }, [query]);
+
+  const getSearchQuery = (query) => {
+    setSearchParams({ query });
+  };
+
+  return (
+    <>
+      <Form getSearchQuery={getSearchQuery} prevValue={query} />
+      {loader && <Loader />}
+      {movies && !movies.length && <NotFoundPage title="No Movies" />}
+      {error && <NotFoundPage title={error} />}
+      {movies && <MovieList query={query} movies={movies} />};
+    </>
+  );
+};
+export default MoviesPage;

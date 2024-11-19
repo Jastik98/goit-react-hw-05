@@ -1,0 +1,37 @@
+.form {
+  display: flex;
+  width: 520px;
+  position: absolute;
+  top: 34px;
+  right: 700px;
+  padding: 8px;
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.input {
+  height: 100%;
+  width: 100%;
+  padding: 10px 15px;
+  color: #000;
+  background-color: transparent;
+  border: 1px solid rgb(53, 81, 53);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.input:hover,
+.input:focus {
+  border-color: darkcyan;
+  scale: 1.02;
+}
+
+.button {
+  height: 100%;
+  border: none;
+  transition: all 0.3s ease;
+}
+.button:hover {
+  scale: 1.04;
+}

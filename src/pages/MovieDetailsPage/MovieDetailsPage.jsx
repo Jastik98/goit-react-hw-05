@@ -1,13 +1,13 @@
 import { useState, useEffect, useRef, Suspense } from "react";
+
 import {
   useLocation,
   NavLink,
   Link,
-  useNavigate,
   Outlet,
   useParams,
 } from "react-router-dom";
-import { fetchTrendedDetails } from "../../servise api/api";
+import { getMovie } from "../../servise api/api";
 import css from "./MovieDetailsPage.module.css";
 import clsx from "clsx";
 import { IoChevronBackCircleOutline } from "react-icons/io5";
@@ -25,16 +25,12 @@ const MovieDetailsPage = () => {
   const [details, setDetails] = useState(null);
   const [loadingDetails, setLoadingDetails] = useState(false);
   const [errorDetails, setErrorDetails] = useState(null);
+  const { movieId } = useParams();
 
   const location = useLocation();
-  const backLinkRef = useRef(location.state ?? "/");
+  console.log(location, "location");
 
-  const fileId = location.pathname.split("/").filter(Boolean).pop();
-
-  const handleNavigate = (pathParam) => {
-    const nextPath = `${location.pathname}/${pathParam}`;
-    navigate(nextPath);
-  };
+  const backLink = useRef(location.state ?? "/");
 
   useEffect(() => {
     const filmDetails = async () => {
@@ -42,8 +38,8 @@ const MovieDetailsPage = () => {
       setLoadingDetails(true);
 
       try {
-        const response = await fetchTrendedDetails(fileId);
-        setDetails(response);
+        const { data } = await getMovie(movieId);
+        setDetails(data);
       } catch (err) {
         setErrorDetails(err.message);
       } finally {
@@ -52,10 +48,10 @@ const MovieDetailsPage = () => {
     };
 
     filmDetails();
-  }, [fileId]);
+  }, [movieId]);
   return (
     <div className={css.Wrapper}>
-      <Link className={css.backLink} to={backLinkRef.current}>
+      <Link className={css.backLink} to={backLink.current}>
         <IconContext.Provider value={{ color: "gray", size: 30 }}>
           <IoChevronBackCircleOutline />
         </IconContext.Provider>

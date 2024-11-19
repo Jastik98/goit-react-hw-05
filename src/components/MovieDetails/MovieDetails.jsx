@@ -5,7 +5,7 @@ const default404 =
 
 const MovieDetails = ({ details }) => {
     const releaseDate = new Date(details.release_date);
-    console.log(details);
+    console.log("details", details);
     
 
   return (
