@@ -3,6 +3,10 @@ import { useState, useEffect } from "react";
 import MovieList from "../../components/MovieList/MovieList";
 import { fetchMovies } from "../../servise api/api";
 
+import Loader from "../../components/Loader/Loader";
+import Section from "../../components/Section/section";
+import Container from "../../components/Container/Container";
+
 const HomePage = () => {
   const [movies, setMovies] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -13,8 +17,6 @@ const HomePage = () => {
       try {
         setLoading(true);
         const { data } = await fetchMovies();
-        console.log(data);
-
         setMovies(data.results);
       } catch (err) {
         setError("Failed to fetch movies");
@@ -26,12 +28,15 @@ const HomePage = () => {
     fetchTrended();
   }, []);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>{error}</p>;
   return (
-    <div>
-      <MovieList  movies={movies} />
-    </div>
+    <Section>
+      <Container>
+        <h1>Trending today</h1>
+        {loading && <Loader />}
+        {error && <NotFoundPage title={error} />}
+        {movies && <MovieList movies={movies} />}
+      </Container>
+    </Section>
   );
 };
 

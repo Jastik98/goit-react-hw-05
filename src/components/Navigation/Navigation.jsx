@@ -12,10 +12,10 @@ const buildLinkClass = ({ isActive }) => {
 const Navigation = () => {
   return (
     <Container>
-      <header>
+      <header className={css.header}>
         <nav>
-          <ul className={css.header}>
-            <li className={css.navList}>
+          <ul className={css.navList}>
+            <li>
               <NavLink className={buildLinkClass} to="/">
                 Home
               </NavLink>

@@ -21,7 +21,7 @@ const Form = ({ getSearchQuery, prevValue }) => {
   };
 
   return (
-    <div>
+    <div className={css.wrapper}>
       <form className={css.form} onSubmit={handleSubmit}>
         <input
           className={css.input}
@@ -32,7 +32,7 @@ const Form = ({ getSearchQuery, prevValue }) => {
           placeholder="Enter film name"
         />
         <button className={css.button} type="submit">
-          <FaSearchengin width={35} color="#55883B" />
+          <FaSearchengin size={30} color="#000" />
         </button>
         <Toaster />
       </form>

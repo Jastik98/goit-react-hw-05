@@ -1,8 +1,9 @@
 .header {
-  background: linear-gradient(0.25turn, #000000, #ebf8e1, #ff0000);
+  background: linear-gradient(0.25turn, #000000, #ffffff, #ff0000);
   padding: 20px;
   border-radius: 100px;
   margin: 20px 0 20px 0;
+  width: 100%;
 }
 .navList {
   display: flex;
@@ -13,17 +14,17 @@
   padding: 10px;
   width: 80px;
   background-color: rgb(255, 255, 255);
-  color: rgb(241, 4, 111);
+  color: rgb(255, 0, 0);
   text-align: center;
   transition: all 400ms ease-in-out;
 }
 .link:hover {
-  scale: 1.03;
+  scale: 1.05;
 }
 .active {
-  background-color: rgb(169, 238, 247);
-  border: 1px solid rgb(47, 64, 255);
-  border-color: rgb(50, 47, 255);
+  background-color: rgb(223, 29, 29);
+  border: 1px solid rgb(17, 209, 36);
+  border-color: rgb(255, 0, 0);
   transition: all 0.7s;
-  color: black;
+  color: rgb(0, 0, 0);
 }

@@ -1,12 +1,14 @@
-import { Formik } from "formik";
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
+import { getMovies } from "../../servise api/api";
 
 import Loader from "../../components/Loader/Loader";
 import MovieList from "../../components/MovieList/MovieList";
 import NotFoundPage from "../NotFoundPage/NotFoundPage";
-import { getMovie, getMovies } from "../../servise api/api";
+
 import Form from "../../components/Form/Form";
+import Section from "../../components/Section/section";
+import Container from "../../components/Container/Container";
 
 const MoviesPage = () => {
   const [movies, setMovies] = useState(null);
@@ -40,13 +42,17 @@ const MoviesPage = () => {
   };
 
   return (
-    <>
-      <Form getSearchQuery={getSearchQuery} prevValue={query} />
-      {loader && <Loader />}
-      {movies && !movies.length && <NotFoundPage title="No Movies" />}
-      {error && <NotFoundPage title={error} />}
-      {movies && <MovieList query={query} movies={movies} />};
-    </>
+    <Section>
+      <Container>
+        <Form getSearchQuery={getSearchQuery} prevValue={query} />
+        {loader && <Loader />}
+        {movies && !movies.length && <NotFoundPage title="No Movies" />}
+        {error && <NotFoundPage title={error} />}
+        {movies && movies.length >= 1 && (
+          <MovieList query={query} movies={movies} />
+        )}
+      </Container>
+    </Section>
   );
 };
 export default MoviesPage;

@@ -4,9 +4,7 @@ const default404 =
   "https://static.vecteezy.com/system/resources/thumbnails/006/549/647/small/404-landing-page-free-vector.jpg";
 
 const MovieDetails = ({ details }) => {
-    const releaseDate = new Date(details.release_date);
-    console.log("details", details);
-    
+  const releaseDate = new Date(details.release_date);
 
   return (
     <div className={css.card}>
