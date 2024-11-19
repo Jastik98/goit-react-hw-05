@@ -28,8 +28,6 @@ const MovieDetailsPage = () => {
   const { movieId } = useParams();
 
   const location = useLocation();
-  console.log(location, "location");
-
   const backLink = useRef(location.state ?? "/");
 
   useEffect(() => {

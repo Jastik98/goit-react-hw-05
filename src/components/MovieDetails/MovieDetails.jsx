@@ -9,9 +9,10 @@ const MovieDetails = ({ details }) => {
     
 
   return (
-    <div>
-      <div>
+    <div className={css.card}>
+      <div className={css.imgDiv}>
         <img
+          className={css.img}
           src={
             details.poster_path
               ? `https://image.tmdb.org/t/p/w500/${details.poster_path}`
@@ -22,7 +23,7 @@ const MovieDetails = ({ details }) => {
         />
       </div>
       <div className={css.text}>
-        <h2 className={css.Title}>
+        <h2 className={css.title}>
           {details.title} {releaseDate.getFullYear()}
         </h2>
         <p className={css.score}>User Score: {details.vote_count}</p>

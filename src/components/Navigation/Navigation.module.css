@@ -1,0 +1,29 @@
+.header {
+  background: linear-gradient(0.25turn, #000000, #ebf8e1, #ff0000);
+  padding: 20px;
+  border-radius: 100px;
+  margin: 20px 0 20px 0;
+}
+.navList {
+  display: flex;
+  gap: 20px;
+}
+.link {
+  border-radius: 30px;
+  padding: 10px;
+  width: 80px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(241, 4, 111);
+  text-align: center;
+  transition: all 400ms ease-in-out;
+}
+.link:hover {
+  scale: 1.03;
+}
+.active {
+  background-color: rgb(169, 238, 247);
+  border: 1px solid rgb(47, 64, 255);
+  border-color: rgb(50, 47, 255);
+  transition: all 0.7s;
+  color: black;
+}

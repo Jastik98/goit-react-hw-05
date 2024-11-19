@@ -1,13 +1,37 @@
+.list {
+  display: flex;
+}
 .link {
   padding: 10px 30px;
   transition: background-color 0.3s ease;
   border: 1px solid gray;
   border-radius: 20px;
   margin-right: 10px;
-  background-color: transparent;
+}
+
+.link:hover {
+  background-color: rgb(243, 230, 206);
+}
+
+.backLink {
+  width: fit-content;
+  padding: 10px 30px;
+  margin-bottom: 20px;
+  display: flex;
+  border-radius: 20px;
+  border: 1px solid gray;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.backLink:hover {
+  background-color: darkgray;
 }
 .active {
-  color: blue;
-  border: 1px solid red;
-  background-color: green;
+  background-color: rgb(169, 238, 247);
+  border: 1px solid rgb(47, 64, 255);
+  border-color: rgb(50, 47, 255);
+  transition: all 0.7s;
+  color: black;
 }

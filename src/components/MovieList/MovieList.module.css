@@ -1,0 +1,17 @@
+.list {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid darkcyan;
+  border-radius: 20px;
+  padding: 20px;
+}
+.listItem {
+  width: calc((100% - 20px) / 3);
+}
+.itemLink {
+  padding: 5px 20px;
+}
+.itemLink:hover {
+  background-color: rgb(245, 218, 167);
+}

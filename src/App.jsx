@@ -1,6 +1,7 @@
 import { Suspense, lazy } from "react";
-import "./App.css";
 import { BrowserRouter as Route, Routes } from "react-router-dom";
+
+import "./App.css";
 
 import Loader from "./components/Loader/Loader";
 import Navigation from "./components/Navigation/Navigation";
@@ -21,7 +22,6 @@ const App = () => {
     <>
       <Navigation />
       <Suspense fallback={<Loader />}>
-        
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/movies/" element={<MoviesPage />} />

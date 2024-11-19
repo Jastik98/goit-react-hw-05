@@ -34,12 +34,12 @@ const MovieCast = () => {
   }, [movieId]);
 
   return (
-    <div className={css.Wrapper}>
+    <div className={css.wrapper}>
       {loader && <Loader />}
       {error && <NotFoundPage title={error} />}
       {cast && (
         <>
-          <ul>
+          <ul className={css.castList}>
             {cast.map(({ cast_id, name, profile_path, character }) => (
               <li className={css.listItem} key={cast_id}>
                 <img

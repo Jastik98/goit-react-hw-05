@@ -1,0 +1,13 @@
+.castList {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.listItem {
+  width: calc((100% - 90px) / 7);
+}
+.listItem img {
+  width: 100%;
+  margin-bottom: 10px;
+}

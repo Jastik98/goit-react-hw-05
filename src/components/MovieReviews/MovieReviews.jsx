@@ -36,10 +36,10 @@ const MovieReviews = () => {
       {loader && <Loader />}
       {error && <NotFoundPage title={error} />}
       {reviews && !reviews.length && <NotFoundPage title="No reviews" />}
-      <ul>
+      <ul className={css.list}>
         {reviews !== null &&
           reviews.map(({ author, content }, index) => (
-            <li className={css.listItem} key={index}>
+            <li className={css.item} key={index}>
               <h3>Author: {author}</h3>
               <p>{content}</p>
             </li>
